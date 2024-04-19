@@ -3,18 +3,18 @@
         <div class="mt-2 ml-2 mr-2">
             <div class="d-flex flex-row justify-space-between align-center border-b-sm pb-2">
                 <div>
-                    <v-icon icon="mdi:mdi-keyboard-backspace" size="small" class="cursor-pointer" @click="changeMainContent('SelectDataOrigin')"></v-icon>
-                    <span class="text-body-2 ml-2">{{ dataOriginParam.databaseType }}</span>
+                    <v-icon icon="mdi:mdi-keyboard-backspace" size="small" class="cursor-pointer" @click="isEdit?changeMainContent('DataOrigin'):changeMainContent('SelectDataOrigin')"></v-icon>
+                    <span class="text-caption ml-2">{{ dataOriginParam.databaseType }}</span>
                 </div>
                 <div>
                     <v-btn size="small" @click="changeMainContent('DataOrigin')">
-                        <span class="text-body-2">取消</span>
+                        <span class="text-caption">取消</span>
                     </v-btn>
                     <v-btn class="ml-2" size="small" color="warning" @click="test">
-                        <span class="text-body-2">测试连接</span>
+                        <span class="text-caption">测试连接</span>
                     </v-btn>
                     <v-btn class="ml-2" size="small" color="success" @click="submit">
-                        <span class="text-body-2">保存</span>
+                        <span class="text-caption">保存</span>
                     </v-btn>
                 </div>
             </div>
@@ -263,7 +263,6 @@ const rules = ref({
 
 })
 onBeforeMount(()=>{
-    console.log(editDataOriginParam.value)
     dataOriginParam.value = isEdit.value ? editDataOriginParam.value : {
         name: '',
         driver: '',

@@ -1,6 +1,6 @@
 <template>
 <div 
-class="data-origin-item text-body-2 cursor-pointer d-flex flex-row justify-space-between align-center" 
+class="data-origin-item text-caption cursor-pointer d-flex flex-row justify-space-between align-center" 
 ref="item" 
 @click="$emit('selectConnectionItem')" 
 @mouseenter="changeStatus('#EEEEEE',true)" 
@@ -19,17 +19,17 @@ ref="item"
             <v-list-item v-for="(item,index) in options" :key="index" :value="index">
                 <v-list-item-title class="cursor-pointer">
                     <v-icon :icon="item.icon" size="small"></v-icon>
-                    <span class="text-body-2 ml-2">{{ item.title }}</span>
+                    <span class="text-caption ml-2">{{ item.title }}</span>
                 </v-list-item-title>
             </v-list-item>
             <v-divider></v-divider>
             <v-list-item>
                 <v-icon icon="mdi:mdi-information" color="info" size="small"></v-icon>
-                <span class="text-body-2 ml-2 text-grey-lighten-1">创建人:{{ props.dataOrigin.creator }}</span>
+                <span class="text-caption ml-2 text-grey-lighten-1">创建人:{{ props.dataOrigin.creator }}</span>
             </v-list-item>
             <v-list-item>
                 <v-icon ></v-icon>
-                <span class="text-body-2 ml-2 text-grey-lighten-1">类型:{{ props.dataOrigin.databaseType }}</span>
+                <span class="text-caption ml-2 text-grey-lighten-1">类型:{{ props.dataOrigin.databaseType }}</span>
             </v-list-item>
         </v-list>
         

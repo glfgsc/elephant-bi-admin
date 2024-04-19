@@ -1,6 +1,6 @@
 <template>
 <v-app>
-    <v-app-bar color="primary">
+    <v-app-bar color="primary" style="height:8vh">
         <template v-slot:prepend>
             <v-app-bar-nav-icon>
                 <v-icon icon="mdi:mdi-elephant" @click="changeIsMenuShow"></v-icon>
@@ -23,7 +23,7 @@
                         <v-img src="/static/img/avatar.png">
                         </v-img>
                     </v-avatar>
-                    <span v-bind="props" class="cursor-pointer ml-2 text-body-2"> 
+                    <span v-bind="props" class="cursor-pointer ml-2 text-caption"> 
                         {{ user.value.name }} 
                     </span>
                 </template>
@@ -48,7 +48,7 @@
         <v-list density="compact" nav v-model:selected="selectItem">
             <v-list-item v-for="(item,index) in menuOptions" :key="index" class="cursor-pointer" color="primary" :value="item.value" @click="navigation(item.value)">
                 <template v-slot:title>
-                    <span class="text-body-1">{{ item.title }}</span>
+                    <span class="text-caption">{{ item.title }}</span>
                 </template>
                 <template v-slot:prepend>
                     <v-icon :icon="'mdi:'+item.icon">

@@ -4,14 +4,14 @@
             <div class="d-flex flex-row justify-space-between align-center border-b-sm pb-2">
                 <div>
                     <v-icon icon="mdi:mdi-keyboard-backspace" size="small" class="cursor-pointer" @click="changeMainContent('DataOrigin')"></v-icon>
-                    <span class="text-body-2 ml-2">返回</span>
+                    <span class="text-caption ml-2">返回</span>
                 </div>
                 <div>
                     <v-btn size="small" @click="changeMainContent('DataOrigin')">
-                        <span class="text-body-2">取消</span>
+                        <span class="text-caption">取消</span>
                     </v-btn>
                     <v-btn class="ml-2" size="small" color="info" disabled >
-                        <span class="text-body-2">保存</span>
+                        <span class="text-caption">保存</span>
                     </v-btn>
                 </div>
                 
@@ -24,10 +24,10 @@
             class="border-e-sm">
                 <v-list v-model:selected="selectItem">
                     <v-list-item  value="always">
-                        <v-list-item-title class="text-body-2">常用</v-list-item-title>
+                        <v-list-item-title class="text-caption">常用</v-list-item-title>
                     </v-list-item>
                     <v-list-item  value="all" >
-                        <v-list-item-title class="text-body-2">所有</v-list-item-title>
+                        <v-list-item-title class="text-caption">所有</v-list-item-title>
                     </v-list-item>
                 </v-list>
             </v-col>
@@ -39,7 +39,7 @@
                                 <v-img :src="item.img"  height="100">
                                 </v-img>
                             </v-card-text>
-                            <v-card-actions class="border-t-sm d-flex flex-row justify-center align-center text-body-2">{{ item.type }}</v-card-actions>
+                            <v-card-actions class="border-t-sm d-flex flex-row justify-center align-center text-caption">{{ item.type }}</v-card-actions>
                         </v-card>
                     </v-col>
                 </v-row>

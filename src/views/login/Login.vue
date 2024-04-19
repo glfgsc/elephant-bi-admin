@@ -32,7 +32,7 @@
                     density="compact"
                     >
                         <template v-slot:label>
-                            <span class="text-body-2">用户名</span>
+                            <span class="text-caption">用户名</span>
                         </template>
                         <template v-slot:prepend>
                             <v-icon icon="mdi:mdi-account" size="small" color="primary"></v-icon>
@@ -45,7 +45,7 @@
                     class="mt-5"
                     >
                         <template v-slot:label>
-                            <span class="text-body-2">密码</span>
+                            <span class="text-caption">密码</span>
                         </template>
                         <template v-slot:prepend>
                             <v-icon icon="mdi:mdi-lock" size="small" color="primary"></v-icon>
@@ -53,7 +53,7 @@
                     </v-text-field>
                     <v-checkbox  color="primary" class="mt-3" v-model="isRemember">
                         <template v-slot:label>
-                            <span class="text-body-2">记住账号</span>
+                            <span class="text-caption">记住账号</span>
                         </template>
                     </v-checkbox>
                     <v-btn color="primary" style="width:100%" class="mt-3" @click="submit">

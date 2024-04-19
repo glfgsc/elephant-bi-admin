@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
 import {ref} from 'vue'
-import {login} from '../api/login.ts'
-import {getConnections} from '../api/dataorigin.ts'
+import {login} from '@/api/login.ts'
+import {getConnections} from '@/api/dataorigin.ts'
+import {getWorkbooks} from '@/api/workbook.ts'
 import {ElMessage} from 'element-plus'
 export const useLoginStore =  defineStore('login',()=>{
     const user  = ref({})
@@ -73,4 +74,20 @@ export const useDataoriginStore = defineStore('dataorigin',()=>{
     }
     return {connections,asyncGetConnections,status,selectConnection,connection,selectDataoriginType,changeSelectDataoriginType,isEdit,editDataOriginParam,changeIsEdit,changeEditDataOriginParam}
 })
-export default {useLoginStore,useDataoriginStore,useIndexStore}
+
+export const useDataSetStore =defineStore('dataset',()=>{
+    const workbooks = ref([])
+    async function asyncGetWorkbooks(param:object){
+        try{
+            let res  = await getWorkbooks(param)
+            workbooks.value = res.data
+        }catch(err){
+            ElMessage({
+                type: 'error',
+                message: err
+            })
+        }
+    }
+    return {workbooks,asyncGetWorkbooks}
+})
+export default {useLoginStore,useDataoriginStore,useIndexStore,useDataSetStore}
