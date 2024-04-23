@@ -7,8 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    AddWorkbookItem: typeof import('./src/components/dataset/AddWorkbookItem.vue')['default']
     DataOriginItem: typeof import('./src/components/dataorigin/DataOriginItem.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    WorkbookItem: typeof import('./src/components/dataset/WorkbookItem.vue')['default']
   }
 }

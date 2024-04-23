@@ -5,6 +5,7 @@
         density="compact"
         slider-color="primary"
         style="height:5vh"
+        class="mt-4"
         >
             <v-tab :value="'workspace'">
                 <span class="text-caption">我的数据集</span>
@@ -23,7 +24,7 @@
                             </template>
                         </el-input>
                     </div>
-                    <div class="d-flex flex-row justify-start aligin center">
+                    <div class="d-flex flex-row justify-start aligin-center ">
                         <el-dropdown>
                             <el-button text size="small">
                                 <el-icon size="small" color="#409EFF" >
@@ -48,36 +49,30 @@
                                 </el-dropdown-menu>
                             </template>
                         </el-dropdown>
-                        <el-button text size="small" @click="addWorkbook">
+                        <el-button text size="small" @click="addWorkbookFlag=true">
                             <el-icon size="small" color="#409EFF" >
                                 <svg t="1713496862257" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5272" width="200" height="200"><path d="M736 704V576a32 32 0 1 1 64 0v128h128a32 32 0 1 1 0 64h-128v128a32 32 0 1 1-64 0v-128h-128a32 32 0 1 1 0-64h128zM576 838.4v76.8H198.4A134.4 134.4 0 0 1 64 780.8V64h382.976l118.336 134.4H825.6c74.24 0 134.4 60.16 134.4 134.4V512h-76.8v-51.2H140.8v320a57.6 57.6 0 0 0 57.6 57.6H576zM883.2 384v-51.2a57.6 57.6 0 0 0-57.6-57.6H530.56L412.288 140.8H140.8V384h742.4z"  p-id="5273"></path></svg>
                             </el-icon>
                             <span class="text-caption">新建工作簿</span>
                         </el-button> 
-                        <el-button text size=small>
+                        <el-button text size="small">
                             <el-icon size="small" color="#409EFF">
                                 <svg t="1713512130360" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4325" width="200" height="200"><path d="M532.352 96c-138.688 0-260.992 88-312.32 218.304C111.808 337.344 32 437.248 32 554.688c0 135.168 105.152 245.312 235.648 245.312a32 32 0 1 0 0-64C173.184 736 96 655.168 96 554.688c0-92.608 65.92-169.664 151.68-180.16a32 32 0 0 0 26.496-21.632C312.32 238.08 415.424 160 532.352 160c145.6 0 265.92 120.32 273.152 273.472a32 32 0 0 0 23.68 29.44c57.472 15.296 98.816 70.336 98.816 134.4 0 76.928-58.944 138.688-130.88 138.688a32 32 0 1 0 0 64c107.968 0 194.88-91.072 194.88-202.688 0-84.672-50.432-159.104-124.288-188.928C848.768 232.32 705.6 96 532.352 96z m11.648 557.248V928a32 32 0 1 1-64 0v-274.752l-73.344 73.408a32 32 0 0 1-45.312-45.312l128-128a32 32 0 0 1 45.312 0l128 128a32 32 0 0 1-45.312 45.312L544 653.248z"  p-id="4326"></path></svg>
                             </el-icon>
                             <span class="text-caption">上传文件</span>
                         </el-button>
-                        <el-button text size=small>
-                            <el-icon size="small" color="#409EFF">
-                                <svg t="1713512533113" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4292" width="200" height="200"><path d="M896 583.59v221.09c0 50.13-39 90.91-86.84 90.91H214.84c-47.84 0-86.84-40.78-86.84-90.91V583.59a32 32 0 0 1 64 0v221.09c0 14.84 10.25 26.91 22.84 26.91h594.32c12.59 0 22.84-12.07 22.84-26.91V583.59a32 32 0 0 1 64 0z m-406.7 77c0.38 0.38 0.77 0.75 1.17 1.12l0.42 0.36 0.72 0.63a0.71 0.71 0 0 1 0.09 0.07l0.6 0.46 0.54 0.42 0.14 0.11 0.66 0.46 0.47 0.33 0.18 0.13 0.67 0.42 0.47 0.29 0.21 0.13c0.21 0.13 0.43 0.24 0.64 0.36l0.51 0.28 0.23 0.13 0.6 0.3 0.59 0.29 0.22 0.11 0.55 0.24 0.68 0.29 0.2 0.09 0.5 0.19 0.78 0.29 0.16 0.06 0.45 0.14 0.89 0.29h0.14l0.41 0.12 1 0.26h0.09l0.41 0.09c0.33 0.07 0.66 0.15 1 0.21h0.1l0.43 0.07 1 0.17h0.09l0.52 0.07 0.93 0.11h0.08l0.74 0.05h4.61l0.73-0.05h0.08l0.93-0.11 0.52-0.07h0.09l1-0.17 0.42-0.07h0.06l1-0.23 0.38-0.08h0.12l1-0.27 0.39-0.11h0.14l0.91-0.29 0.42-0.14 0.17-0.07 0.82-0.3 0.47-0.18 0.2-0.09 0.7-0.3 0.53-0.23 0.22-0.11 0.61-0.3 0.58-0.29 0.22-0.12 0.54-0.3 0.61-0.35 0.22-0.13 0.49-0.31 0.64-0.4 0.19-0.13 0.5-0.35c0.21-0.14 0.42-0.28 0.62-0.43l0.15-0.12 0.56-0.43 0.57-0.44a0.39 0.39 0 0 1 0.1-0.08l0.71-0.61 0.43-0.37c0.4-0.37 0.8-0.74 1.18-1.13l210.93-211a32 32 0 0 0-45.27-45.25L543.93 560.77l-0.09-400.37a32 32 0 0 0-32-32 32 32 0 0 0-32 32l0.09 400.29-156.18-156.33a32 32 0 0 0-45.28 45.23z"  p-id="4293"></path></svg>
-                            </el-icon>
-                            <span class="text-caption">下载文件</span>
-                        </el-button>  
                     </div>
                 </div>  
                 <div class="border-t-sm border-b-sm mt-2 ml-2 mr-2 pt-2 pb-2 d-flex flex-row justify-space-between align-center" style="width:100%">
                     <div>
-                        <el-icon size="small" color="#000000">
-                            <svg t="1713513246700" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2311" width="200" height="200"><path d="M819.490858 1024c-5.119393 0-10.238787-2.559697-15.35818-5.119393L187.245779 537.657632c-5.119393-5.119393-10.238787-12.798483-10.238787-20.477573 0-7.67909 2.559697-15.35818 10.238787-20.477573L804.132678 5.240723c10.238787-7.67909 28.156663-7.67909 35.835753 5.119393 7.67909 10.238787 7.67909 28.156663-5.119393 35.835753L246.118803 517.180058l591.289932 460.745402c10.238787 7.67909 12.798483 25.596967 5.119393 35.835753C834.849038 1021.440303 827.169948 1024 819.490858 1024z" p-id="2312"></path></svg>
+                        <el-icon size="small" color="#000000" class="cursor-pointer">
+                            <svg t="1713534416512" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1411" width="200" height="200"><path d="M625.777778 1014.857143 201.142857 590.222222c-42.666667-42.666667-42.666667-112.761905 0-155.428571L626.793651 9.142857c11.174603-12.190476 30.47619-12.190476 42.666667 0 12.190476 11.174603 12.190476 30.47619 0 42.666667l-425.650794 426.666667c-9.142857 9.142857-14.222222 21.333333-14.222222 34.539683 0 13.206349 5.079365 25.396825 14.222222 34.539683l424.634921 424.634921c12.190476 11.174603 12.190476 30.47619 0 42.666667-6.095238 6.095238-13.206349 9.142857-21.333333 9.142857C638.984127 1024 631.873016 1020.952381 625.777778 1014.857143z" p-id="1412"></path></svg>
                         </el-icon>
-                        <el-icon size="small" color="#000000" class="ml-2">
-                            <svg t="1713513275169" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2458" width="200" height="200"><path d="M256 1000.369231c-3.938462 0-11.815385-3.938462-15.753846-7.876923C236.307692 984.615385 236.307692 972.8 244.184615 964.923077l492.307692-468.676923L252.061538 47.261538C244.184615 39.384615 240.246154 27.569231 248.123077 19.692308c7.876923-7.876923 19.692308-7.876923 27.569231 0l500.184615 464.738462c3.938462 3.938462 7.876923 7.876923 7.876923 15.753846 0 3.938462-3.938462 11.815385-7.876923 15.753846L271.753846 996.430769C267.815385 1000.369231 263.876923 1000.369231 256 1000.369231z" p-id="2459"></path></svg>
+                        <el-icon size="small" color="#000000" class="ml-4 cursor-pointer">
+                            <svg t="1713534434313" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1573" width="200" height="200"><path d="M201.142857 1024c-8.126984 0-15.238095-3.047619-21.333333-9.142857-12.190476-12.190476-12.190476-31.492063 0-42.666667l424.634921-424.634921c9.142857-9.142857 14.222222-21.333333 14.222222-34.539683 0-13.206349-5.079365-25.396825-14.222222-34.539683L178.793651 51.809524c-12.190476-12.190476-12.190476-31.492063 0-42.666667 12.190476-12.190476 31.492063-12.190476 42.666667 0l425.650794 425.650794c42.666667 42.666667 42.666667 112.761905 0 155.428571L223.492063 1014.857143C217.396825 1020.952381 209.269841 1024 201.142857 1024z" p-id="1574"></path></svg>
                         </el-icon>
-                        <el-icon size="small" color="#000000" class="ml-2">
-                            <svg t="1713513387645" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3559" width="200" height="200"><path d="M853.333333 768.064A426.112 426.112 0 0 1 512 938.666667C276.352 938.666667 85.333333 747.648 85.333333 512S276.352 85.333333 512 85.333333s426.666667 191.018667 426.666667 426.666667a21.333333 21.333333 0 0 1-42.666667 0c0-212.074667-171.925333-384-384-384S128 299.925333 128 512s171.925333 384 384 384a383.573333 383.573333 0 0 0 319.36-170.666667h-84.757333A21.248 21.248 0 0 1 725.333333 704c0-11.776 9.664-21.333333 21.269334-21.333333h128.128c5.866667 0 11.178667 2.346667 15.018666 6.186666l0.021334 0.106667c3.84 3.882667 6.229333 9.173333 6.229333 14.976v128.128c0 11.733333-9.472 21.269333-21.333333 21.269333-11.776 0-21.333333-9.664-21.333334-21.269333v-64z"  p-id="3560"></path></svg>
+                        <el-icon size="small" color="#000000" class="ml-4 cursor-pointer">
+                            <svg t="1713534537624" class="icon" viewBox="0 0 1104 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2659" width="200" height="200"><path d="M1083.689625 270.158405a33.865301 33.865301 0 0 0-44.702197 16.255344l-37.929137 81.276722A509.334124 509.334124 0 1 0 1010.540575 612.875249a33.865301 33.865301 0 1 0-67.730602-12.868815 445.667358 445.667358 0 1 1-9.482284-206.578334l-83.30864-38.606443a33.865301 33.865301 0 1 0-28.446852 61.634847l157.134995 73.14905a33.865301 33.865301 0 0 0 44.702197-16.255344l73.14905-157.134996a33.865301 33.865301 0 0 0-12.868814-46.056809z"  p-id="2660"></path></svg>
                         </el-icon>
                         <el-divider direction="vertical" />
                         <span class="text-caption">{{location}}</span>
@@ -119,21 +114,19 @@
                 </div>
                 <div>
                     <v-row no-gutters>
+                        <v-col lg="2" cols="12" v-if="addWorkbookFlag" class=" mt-4">
+                            <add-workbook-item 
+                            @add-workbook="addWorkbook"
+                            @cancel="addWorkbookFlag=false"
+                            ></add-workbook-item>
+                        </v-col>
                         <v-col lg="2" cols="12" v-for="(item,index) in workbooks" :key="index" class="ml-4 mt-4" >
-                            <v-card variant="plain" class="cursor-pointer database-card">
-                                <v-card-text>
-                                    <v-img src="/static/img/folder.jpg"  height="50" v-if="item.type==0">
-                                    </v-img>
-                                    <v-img src="/static/img/sql.jpg" height="50" v-if="item.type==1&&item.fileType==1"></v-img>
-                                    <v-img src="/static/img/excel.jpg" height="50" v-if="item.type==1&&item.fileType==2"></v-img>
-                                </v-card-text>
-                                <v-card-actions class="d-flex flex-row justify-center align-center text-caption">
-                                    {{ item.name }}
-                                </v-card-actions>
-                            </v-card>
+                            <workbook-item 
+                            :workbook="item"
+                            @get-workbooks="getWorkbooks"
+                            ></workbook-item>
                         </v-col>
                     </v-row>
-                    
                 </div>
             </v-window-item>
             <v-window-item value="shareData">
@@ -150,6 +143,8 @@ import {useDataSetStore,useLoginStore} from '@/store/index.ts'
 import {insertWorkbook} from '@/api/workbook.ts'
 import {ElMessage} from 'element-plus'
 import moment from 'moment'
+import WorkbookItem from '@/components/dataset/WorkbookItem.vue'
+import AddWorkbookItem from '@/components/dataset/AddWorkbookItem.vue'
 const tab = ref('workspace')
 const location = ref('/我的数据集')
 const sortIcon = ref('<svg t="1713502225548" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6463" width="200" height="200"><path d="M790.954667 810.666667h-173.909334l-22.613333 58.112a42.666667 42.666667 0 0 1-79.530667-30.890667l149.333334-384c14.08-36.266667 65.408-36.266667 79.530666 0l149.333334 384a42.666667 42.666667 0 0 1-79.530667 30.890667L790.954667 810.666667z m-33.194667-85.333334l-53.76-138.282666L650.24 725.333333h107.52zM170.666667 170.666667h682.666666a42.666667 42.666667 0 0 1 0 85.333333H170.666667a42.666667 42.666667 0 1 1 0-85.333333z m0 298.666666h298.666666a42.666667 42.666667 0 0 1 0 85.333334H170.666667a42.666667 42.666667 0 0 1 0-85.333334z m0 298.666667h256a42.666667 42.666667 0 0 1 0 85.333333H170.666667a42.666667 42.666667 0 0 1 0-85.333333z" fill="#222222" p-id="6464"></path></svg>')
@@ -159,6 +154,7 @@ const {workbooks} = storeToRefs(datasetStore)
 const {asyncGetWorkbooks} = datasetStore
 const loginStore = useLoginStore()
 const {user} = storeToRefs(loginStore)
+const addWorkbookFlag = ref(false)
 const queryPacksTablesParams = ref({
     name: ''
 })
@@ -172,6 +168,7 @@ const initInsertParam = ref({
     size: 0,
     type: 0
 })
+
 async function getWorkbooks(param:object){
     await asyncGetWorkbooks(param)
 }
@@ -193,14 +190,13 @@ function handleTypeCommand(command:string){
     }
 }
 
-async function addWorkbook(){
-    initInsertParam.value.name = '新建工作簿_' + moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
+async function addWorkbook(name:string){
+    initInsertParam.value.name = name
     initInsertParam.value.createTime = moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
-    console.log(initInsertParam.value);
-    
     try{
         let res = await insertWorkbook(initInsertParam.value)
         if(res.data == 1){
+            addWorkbookFlag.value = false
             await getWorkbooks({parentId:0})
         }
     }catch(err){
@@ -214,4 +210,5 @@ async function addWorkbook(){
 onMounted(async function getWorkbooks(){
     await asyncGetWorkbooks({'parentId':0})
 })
+
 </script>

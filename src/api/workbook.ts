@@ -8,3 +8,9 @@ export function getWorkbooks(param:Object){
 export function insertWorkbook(param:object){
     return request('/workbook/insert','post',param,headers)
 }
+
+export function updateWorkbook(param:object){
+    return request('/workbook/update','post',param,headers)
+}
+
+export default{getWorkbooks,insertWorkbook,updateWorkbook}

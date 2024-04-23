@@ -5,6 +5,7 @@
     density="compact"
     slider-color="primary"
     style="height:5vh"
+    class="mt-4"
     >
         <v-tab :value="'connectionManage'" >
             <span class="text-caption">数据连接管理</span>

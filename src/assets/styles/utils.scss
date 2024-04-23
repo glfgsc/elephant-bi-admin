@@ -27,3 +27,30 @@
 .database-card:hover{
     box-shadow: var(--el-box-shadow);
 }
+
+.workbook-card{
+    width:100%;
+    padding: 10px 10px 10px 10px
+}
+
+.workbook-card:hover{
+    box-shadow: var(--el-box-shadow);
+    background-color: #FAFCFF;
+    .operate-btn{
+        display: block !important;
+    }
+}
+
+.operate-btn{
+    display: none
+}
+
+
+.context-menu{
+    width:150px
+}
+
+.context-menu-item:hover{
+    background-color: #F0F2F5;
+}
+
